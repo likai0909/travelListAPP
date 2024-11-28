@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Quicksand:wght@500;700&display=swap");
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px for easier scaling */
+  scroll-behavior: smooth; /* Smooth scrolling for a polished feel */
+}
+
+body {
+  font-size: 2.4rem;
+  font-family: "Quicksand", sans-serif;
+  color: #5a3e2b;
+  font-weight: 500;
+  line-height: 1.6; /* Improve text readability */
+  background: linear-gradient(to bottom, #fdf3e1, #fde6c4); /* Subtle gradient background */
+}
+
+/* App Container */
+.app {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  height: 100vh;
+  gap: 2rem; /* Add spacing between rows */
+}
+
+/* Header */
+h1 {
+  text-align: center;
+  background-color: #f4a226;
+  font-family: "Monoton", cursive;
+  font-size: clamp(5rem, 8vw, 8rem); /* Responsive font size */
+  text-transform: uppercase;
+  font-weight: 400;
+  word-spacing: 0.5rem;
+  letter-spacing: -0.2rem;
+  padding: 2.4rem 1rem;
+  color: #ffffff; /* Contrast for accessibility */
+  border-bottom: 0.5rem solid #e5771f; /* Visual separation */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle depth */
+}
+
+/* Form Section */
+.add-form {
+  background-color: #e5771f;
+  padding: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  gap: 1rem;
+  border-radius: 1rem; /* Add rounded corners */
+}
+
+h3 {
+  font-size: 2.4rem;
+  color: #fff; /* Improve readability */
+}
+
+/* Buttons, Inputs, and Select */
+button,
+select,
+input {
+  background-color: #ffebb3;
+  color: #5a3e2b;
+  font-family: inherit;
+  border: none;
+  border-radius: 5rem; /* Slightly smaller radius */
+  padding: 1.2rem 3.2rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease; /* Add smooth transitions */
+}
+
+button:hover,
+select:hover,
+input:hover {
+  background-color: #f4a226; /* Interactive feedback */
+  transform: translateY(-2px); /* Subtle hover effect */
+}
+
+.add-form button {
+  text-transform: uppercase;
+  background-color: #76c7ad;
+  color: #ffffff; /* Better contrast */
+}
+
+input[type="checkbox"] {
+  height: 2rem;
+  width: 2rem;
+  accent-color: #e5771f;
+}
+
+/* List Section */
+.list {
+  background-color: #5a3e2b;
+  color: #ffebb3;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  align-items: center;
+  border-radius: 1rem; /* Add rounded edges */
+}
+
+.actions button,
+.list select {
+  text-transform: uppercase;
+  padding: 0.8rem 2.4rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0.8rem;
+}
+
+.list ul {
+  list-style: none;
+  width: 90%; /* Increase flexibility */
+  max-height: 50vh; /* Constrain height for better layout */
+  overflow-y: auto; /* Enable scrolling */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+  justify-content: center;
+  align-content: start;
+  padding: 1rem; /* Add spacing */
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background-color: #e5771f; /* Highlight items */
+  border-radius: 0.8rem; /* Rounded corners */
+  padding: 1rem 1.6rem; /* Add padding */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.list li button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #ffebb3; /* Match list colors */
+  padding: 0.8rem;
+  transform: translateY(2px);
+  transition: color 0.2s ease;
+}
+
+.list li button:hover {
+  color: #f4a226; /* Highlight on hover */
+}
+
+/* Statistics Section */
+.stats {
+  background-color: #76c7ad;
+  text-align: center;
+  font-weight: 700;
+  padding: 3.2rem 1rem;
+  color: #ffffff; /* Accessible color contrast */
+  border-top: 0.5rem solid #5a3e2b; /* Visual separation */
+}
+
+/* Base style for the priority indicator */
+.priority-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; /* Circular shape */
+  display: inline-block;
+  margin-left: 1rem;
+  vertical-align: middle;
+}
+
+/* Red for high priority */
+.priority-indicator.high {
+  background-color: red;
+}
+
+/* Yellow for medium priority */
+.priority-indicator.medium {
+  background-color: yellow;
+}
+
+/* Green for low priority */
+.priority-indicator.low {
+  background-color: green;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  body {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: clamp(4rem, 7vw, 6rem);
+  }
+
+  .add-form {
+    flex-direction: column; /* Stack elements */
+  }
+
+  .list ul {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+}
